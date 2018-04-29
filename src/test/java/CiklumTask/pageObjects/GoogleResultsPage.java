@@ -1,0 +1,24 @@
+package CiklumTask.pageObjects;
+
+import CiklumTask.PageObject;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
+
+public class GoogleResultsPage extends PageObject {
+    @FindBy(css = "div div.rc h3.r a")
+    private List<WebElement> elementsOnResultsPage;
+
+    public GoogleResultsPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public WebElement lookForWebsite(String website) throws Exception {
+        return elementsOnResultsPage.stream()
+                .filter(webElement -> webElement.getAttribute("href").contains(website))
+                .findFirst()
+                .orElseThrow(() -> new Exception(website + " has not been found."));
+    }
+}
