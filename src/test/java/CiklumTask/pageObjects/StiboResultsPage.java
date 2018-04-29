@@ -8,15 +8,15 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class StiboResultsPage extends PageObject {
-    @FindBy(css = "div.ais-body.ais-stats--body")
+    @FindBy(xpath = "//div[@class='ais-body ais-stats--body']")
     private WebElement resultsCount;
-    @FindBy(css = "span.ais-stats--time")
+    @FindBy(xpath = "//span[@class='ais-stats--time']")
     private WebElement statsTime;
-    @FindBy(css = "div.ais-hits div.ais-hits--item a")
+    @FindBy(xpath = "//div[@class='ais-hits--item']//child::a")
     private List<WebElement> elementsOnStiboResults;
-    @FindBy(css = "#pagination > div > ul > li.ais-pagination--item.ais-pagination--item__page.ais-pagination--item__active")
+    @FindBy(xpath = "//li[contains(@class, 'active')]//child::a")
     private WebElement currentPageNumber;
-    @FindBy(linkText = "›")
+    @FindBy(xpath = "//li[contains(@class, 'next')]//child::a")
     private WebElement nextPageButton;
 
     public StiboResultsPage(WebDriver driver) {

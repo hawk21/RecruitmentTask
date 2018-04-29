@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StiboAboutUsPage extends PageObject {
-    @FindBy(css = "a.icon-facebook img")
+    @FindBy(xpath = "//a[@class='icon-facebook']//child::img")
     public WebElement facebookIcon;
-    @FindBy(linkText = "Blog")
+    @FindBy(xpath = "//a[contains(text(),'Blog')]")
     public WebElement blogLink;
 
     public StiboAboutUsPage(WebDriver driver) {

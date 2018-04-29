@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GoogleHomePage extends PageObject {
-    @FindBy(name = "q")
+    @FindBy(xpath = "//input[@name='q']")
     public WebElement SearchField;
 
     public GoogleHomePage(WebDriver driver) {

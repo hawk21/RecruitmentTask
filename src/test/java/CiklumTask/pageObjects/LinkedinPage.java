@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LinkedinPage extends PageObject {
-    @FindBy(css = "input#join-submit.join.submit-button")
+    @FindBy(xpath = "//input[@id = 'join-submit']")
     public WebElement joinNowButton;
-    @FindBy(css = "form#join-form.join-form")
+    @FindBy(xpath = "//form[@id = 'join-form']")
     public WebElement joinForm;
 
     public LinkedinPage(WebDriver driver) {

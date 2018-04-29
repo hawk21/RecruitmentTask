@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StiboSearchPage extends PageObject {
-    @FindBy(css = "div.search table tbody tr td img")
+    @FindBy(xpath = "//div[@class='search']//child::img")
     public WebElement searchIcon;
-    @FindBy(id = "search-input")
+    @FindBy(xpath = "//input[@id='search-input']")
     public WebElement searchField;
 
     public StiboSearchPage(WebDriver driver) {

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class GoogleResultsPage extends PageObject {
-    @FindBy(css = "div div.rc h3.r a")
+    @FindBy(xpath = "//h3[@class='r']/child::a")
     private List<WebElement> elementsOnResultsPage;
 
     public GoogleResultsPage(WebDriver driver) {

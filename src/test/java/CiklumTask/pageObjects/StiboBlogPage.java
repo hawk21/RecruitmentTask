@@ -6,19 +6,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StiboBlogPage extends PageObject {
-    @FindBy(name = "email")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement emailField;
-    @FindBy(css = "ul.hs-error-msgs.inputs-list li label")
+    @FindBy(xpath = "//label[contains(text(), 'Email must be')]")
     public WebElement wrongEmailMessage;
-    @FindBy(className = "submitted-message")
+    @FindBy(xpath = "//div[@class = 'submitted-message']")
     public WebElement correctEmailMessage;
 
-    @FindBy(className = "icon-linkedin")
+    @FindBy(xpath = "//a[@class='icon-linkedin']")
     public WebElement linkedinIcon;
 
-    @FindBy(className = "filter-expand-link")
+    @FindBy(xpath = "//a[contains(text(), 'See All')]")
     public WebElement seeAllButton;
-    @FindBy(linkText = "Customer Master Data Management (CMDM)")
+    @FindBy(xpath = "//div[@class='widget-module']//child::a[contains(text(), 'CMDM')]")
     public WebElement cmdmCategoryButton;
 
     public StiboBlogPage(WebDriver driver) {
